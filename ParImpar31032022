@@ -1,0 +1,30 @@
+# Trabajos-Jorge-Osorio
+#include <iostream>
+
+using namespace std;
+	
+	int N;
+	int x;
+	int y;
+	int R;
+int Funperf(int A){
+	if(A%2==0){
+ 		R=0;
+	}
+	else{
+		R=1;
+	}
+	return R;	
+	}
+
+int main(int argc, char** argv) {
+	cin>> x;
+	N=Funperf(x);
+	if(N==1){
+		cout<<"impar";
+	}
+	else{
+		cout<<"par";
+	}
+	return 0;
+}
