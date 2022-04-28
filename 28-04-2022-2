@@ -1,0 +1,26 @@
+//3. Crear un programa en C++ que permita llenar un arreglo de 100 números enteros aleatorios entre 0 y 10000, y que finalmente los liste en pantalla
+
+#include <stdlib.h>
+
+#include <time.h>
+
+#include<iostream>
+
+using namespace std;
+ 
+int main()
+{
+	int A[100];	
+    int num, c, h;
+    srand(time(NULL));
+    
+    for(c = 0; c <= 100; c++)
+    {
+        num = 0 + rand() % (10000);
+        A[c]=num;
+    }
+    for(h=0; h<=100; h=h+1)
+    cout<<"#" << h <<":  "<< A[h]<< endl;
+    
+    return 0;
+}
