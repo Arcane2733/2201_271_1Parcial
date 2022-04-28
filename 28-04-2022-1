@@ -1,0 +1,41 @@
+//Crear un programa en C++ que permita llenara un arreglo con 1000 números enteros, 500 pares y 500 impares y finalmente los liste en pantalla//
+clude <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	
+	int I[500];
+	int P[500];
+	int c;
+	int CI=0;
+	int CP=0;
+	int otro=1;
+	int N;
+	int H;
+	
+	while(c<=1000 || CI==500 || CP==500 || otro==1){
+		cout<< "inserte un numero:";
+		cin>> N;
+		if(N%2==0){
+		cout<< "par:"<< endl;	
+		P[CP]=N;
+		CP=CP+1;
+		}
+		else{
+		cout<<"impar"<< endl;	
+		I[CI]=N;
+		CI=CI+1	;	
+		}
+		cout<<"si quieres otro oprime 1"<< endl;
+		cin>>otro;	
+	}
+	for(H=0; H<CP; H=H+1){
+		cout<< "#" << H << ":  " << P[H]<< endl;
+	}
+	for(H=0; H<CI; H=H+1){
+		cout<< "#" << H << ":  " << I[H]<< endl;
+	}
+	
+	return 0;
+}
