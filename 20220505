@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int F=3;
+    int C=2;
+    int Gsuma=0;
+    int I;
+    int J;
+    int Sum;
+    int m;
+    int n;
+    int A[2][3];
+    int B[2][3];
+    int R[3][4];
+    for(I=0; I<F; I=I+1){
+        Sum=0;
+        for(J=0; J<C;J=J+1){
+            cin>> A[J][I];
+            cin>> B[J][I];
+            R[J][I]= A[J][I] + B[J][I];
+            Sum= Sum + R[J][I];
+            Gsuma =Gsuma + R[J][I];
+        }
+        R[C][I]= Sum;
+    }
+     
+    for(m=0;m<F;m=m+1){
+        for(n=0;n<4;n=n+1){
+            cout<< A[m][n];
+        }
+        cout<<endl;
+    }
+    for(m=0;m<F;m=m+1){
+        for(n=0;n<4;n=n+1){
+            cout<< B[m][n];
+        }
+        cout<<endl;
+    }for(m=0;m<F;m=m+1){
+        for(n=0;n<4;n=n+1){
+            cout<< R[m][n];
+        }
+        cout<<endl;
+    }
+    cout<< Gsuma;
+    
+    return 0;
+}
