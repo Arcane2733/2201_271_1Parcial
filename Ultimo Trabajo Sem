@@ -1,0 +1,49 @@
+//ultima nota de semestre//
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    float Not;
+    int FJust;
+    int FIjut;
+    float Asis;
+    int notas[9][15];
+    int nombre[15];
+    int E;
+    int S;
+    int Promedio[15];
+    int nomb;
+    float prom;
+    //buscar como colocar nombre, en vez de ID//
+    for(E=0;E<14; E=E+1){
+        cout<<"ingrese el ID del estudiante"<<endl;
+        cin>>nomb;
+        nombre[E]=nomb;
+        //notas//
+        for(S=0;S<8; S=S+1){
+        cout<<"ingrese la nota #"<< S+1 <<"del estudiante: "<< endl;
+        cin>>Not;
+        notas[E][S]=Not;
+        }
+        //calculo de asistencias//
+        cout<<"ingrese la cantidad de asistencias Justificadas" << endl;
+        cin>>FJust;
+        cout<<"ingrese la cantidad de asistencias Injustificadas" << endl;
+        cin>>FIjut;
+        Asis= 5.0-(FIjut*0.5)-(FJust*0.25);
+        notas[8][E]= Asis;
+    }
+    for(E=0;E<14; E=E+1){
+        for(S=0;S<9; S=S+1){
+            prom= prom + notas[E][S];
+        }    
+        Promedio[E]= prom /9;
+    }
+    cout<< "el promedio del estudiante es:"<< endl;
+    for(E=0;E<14; E=E+1){
+        cout<< nombre[E] <<":  "<< Promedio[E];
+    }
+    
+    return 0;
+}
