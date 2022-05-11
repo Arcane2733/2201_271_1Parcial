@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int P[3];
+    int V[4];
+    int C[4][3];
+    int Cst;
+    int CstM[3];
+    double Usr[3][4];
+    int Ca;
+    int N;
+    int J;
+    int A;
+    int B;
+    int D;
+    int E; 
+    int F;
+    for (D =0; D<3; D= D + 1) {
+        CstM[D]=0;
+    }
+    //pedimos la cantidad de P
+    for (B =0; B<3; B= B + 1) {
+        cout<< "indique la produccion semanal de modelo #" << B+1 <<":" << endl;
+        cin>> P[B];
+    }
+    //pedimos la cantidad de V
+    for (E =0; E<4; E= E + 1) {
+         cout<< "indique indique el valor de unidad del concepto #" << E+1 <<":" << endl;
+        cin>> V[E];
+        }
+    //pedimos la parte de la matriz C por orden
+    for (D =0; D<3; D= D + 1) {
+        cout<< "en el modelo #" << D+1 <<" digite:" << endl;
+        for (F =0; F<4; F= F + 1) {
+        cout<< "la cantidad requerida del concepto #" <<F+1 <<" para la fabricacion del vehiculo: " << endl;
+        cin>> C[F][D];
+        }
+    }
+    //operaciones
+    for (Ca=0; Ca<3; Ca= Ca + 1) {
+        for (N=0; N<4; N= N + 1) {
+        Cst= C[N][Ca]*V[N];
+        CstM[Ca]= CstM[Ca] + Cst;
+        Usr[N][Ca]= (Cst*P[Ca]);
+        }
+    }
+    //impresion de forma ordenada
+    for (J =0; J<3; J = J + 1) {
+     switch(J){
+        case 0: cout << "el costo del coche Coupé en fabricacion es:";
+        break;
+        case 1: cout << "el costo del coche Ranchera en fabricacion es:";
+        break;
+        case 2: cout << "el costo del coche Económico en fabricacion es:";
+        break;
+     }
+     cout<< CstM[J] << endl;
+         for (A=0; A<4; A= A + 1) {
+        switch(A){
+        case 0: cout << "Las unicades requeridas de forma senaman en Material es: ";
+        break;
+        case 1: cout << "Las unicades requeridas de forma senaman en Personas es: ";
+        break;
+        case 2: cout << "Las unicades requeridas de forma senaman en Impuestos es: ";
+        break;
+        case 3: cout << "Las unicades requeridas de forma senaman en Transporte es: ";
+        break;
+        }
+        cout<< Usr[A][J] <<endl;
+        }
+    }
+    return 0;
+}
